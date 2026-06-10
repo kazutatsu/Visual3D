@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Three.js test</title>
+    <style>
+        body { margin: 0; overflow: hidden; display: flex; font-family: sans-serif; }
+        #sidebar { width: 300px; background: #f0f0f0; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; z-index: 10; }
+        #canvas-container { flex-grow: 1; height: 100vh; }
+        textarea { width: 100%; height: 100px; resize: none; }
+        select, button { padding: 8px; font-size: 14px; cursor: pointer; }
+        .size-container { display: flex; gap: 10px; align-items: center; }
+        .size-container div { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="sidebar">
+        <h3>UpperHand 3D</h3>
+        <label for="board-size-select">盤面サイズ:</label>
+        <div class="size-container">
+          <div>
+            <label style="font-size: 12px; color: #555;">縦のマス数(m)</label>
+            <select id="board-m-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 12px; color: #555;">横のマス数(n)</label>
+            <select id="board-n-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+        </div>
+        <hr>
+
+        <label>盤面テキスト入力:</label>
+        <textarea id="cui-input" placeholder="例: k,x,z,c"></textarea>
+        <button id="apply-btn">盤面に反映</button>
+        <hr>
+        <p style="font-size: 12px; color: #666;">※右側の画面をドラッグすると視点を回転できます。</p>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="module" src="./main.js"></script>
+
+</body>
+</html>
