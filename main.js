@@ -92,8 +92,8 @@ applyBtn.addEventListener('click', () => {
     if(parts.length !== 4) return;
 
     const k = parseInt(parts[0], 10);
-    const x = parseInt(parts[1], 10);
-    const z = parseInt(parts[2], 10);
+    const x = parseInt(parts[1]-1, 10);
+    const z = parseInt(parts[2]-1, 10);
     const c = parts[3].trim().toUpperCase();
 
     if(x >= sizeM || z >= sizeN || x < 0 || z < 0 ||  k > Math.min(sizeM, sizeN)) {
