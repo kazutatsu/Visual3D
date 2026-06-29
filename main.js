@@ -104,6 +104,7 @@ applyBtn.addEventListener('click', () => {
     let colorHex = 0xffffff;
     if(c === 'R') colorHex = 0xff3333;
     else if(c === 'B') colorHex = 0x3333ff;
+    else if(c === 'G') colorHex = 0x33ff33;
 
     const pieceMaterial = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.2, metalness: 0.1 });
 
